@@ -1,0 +1,177 @@
+.home_page {
+    background-color: #110F0F;
+    /* min-height: 100dvh; */
+    padding: 20px 50px 0px;
+    color: white;
+    background: url(../assets/images/bg.png), #000 0px -641px / 100% 149.981% no-repeat;
+    background-size: cover;
+
+    .rect {
+        position: absolute;
+        min-height: 100dvh;
+        width: 250px;
+        top: 0;
+        left: 15vw;
+        background-image: url(../assets/images/rect.png);
+        z-index: 1;
+    }
+
+    .contents {
+        z-index: 2;
+        position: relative;
+
+        & nav {
+            border: 2px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo_container {
+                display: flex;
+                align-items: center;
+
+                .logo {
+                    background-image: url(/src/modules/Home/assets/images/logo.png);
+                    width: 40px;
+                    height: 40px;
+                    background-size: cover;
+                }
+
+                & p {
+                    & span {
+                        color: #FFC700;
+                    }
+                }
+            }
+
+            .nav_links {
+                display: flex;
+                gap: 60px;
+            }
+        }
+
+        & section {
+            padding: 110px 130px 0px;
+            height: calc(100vh - 60px);
+
+            .head {
+                display: flex;
+                justify-content: space-around;
+                gap: 200px;
+                margin-bottom: 60px;
+
+                & h1 {
+                    font-size: 60px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    margin-bottom: 20px;
+
+                }
+
+                .sub_head {
+                    color: #FFC700;
+                    width: 680px;
+                }
+
+                .about {
+                    font-size: 20px;
+                    line-height: 1.5;
+                    margin-top: 20px;
+                    text-align: center;
+
+                    & p {
+                        margin-bottom: 50px;
+                    }
+
+                    & button {
+                        background-color: #fff;
+                        border: none;
+                        border-radius: 30px;
+                        padding: 10px 20px;
+                        color: #110F0F;
+                        font-size: 20px;
+                        font-weight: 700;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .functionalities {
+                background-image: url(/src/modules/Home/assets/images/spring.png);
+                background-size: contain;
+                display: flex;
+                position: absolute;
+                width: 100vw;
+                left: -50px;
+                color: #FFC700;
+                justify-content: space-between;
+                padding: 92px 0px;
+                z-index: 1;
+
+
+                & p {
+                    width: 100%;
+                    text-align: center;
+                    z-index: 2;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+    & main {
+        min-height: 100dvh;
+        width: calc(100% + 100px);
+        background: #fff;
+        margin-left: -50px;
+        position: relative;
+        background: url(../assets/images/bg_dark.png), #fff 0px -641px / 100% 149.981% no-repeat;
+
+        .bg {
+            background-image: url(../assets/images/bg_main.png);
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 50%;
+
+            .illustration {
+                position: absolute;
+                left: 0;
+                top: calc(100dvh - 80%);
+                width: 80%;
+                height: 60%;
+                background-image: url(../assets/images/illustration.png);
+                background-size: cover;
+            }
+        }
+
+        .main_content {
+            display: flex;
+            height: 100vh;
+            color: #000;
+            position: absolute;
+            width: 100vw;
+            right: -30%;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            & h1 {
+                font-size: 40px;
+                font-weight: 900;
+                width: 36%;
+            }
+
+            & button {
+                padding: 10px 120px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #fff;
+                background: #000;
+                border-radius: 30px;
+            }
+        }
+    }
+}

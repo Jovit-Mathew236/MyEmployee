@@ -10,17 +10,17 @@ import CreateProject from "./modules/Dashboard/modules/CreateProject/CreateProje
 import { Login } from "./modules/Dashboard/modules/Login";
 import Status from "./modules/Dashboard/modules/Status/Status";
 import Teams from "./modules/Dashboard/modules/Teams/Teams";
-
+import Home from "./modules/Home/pages/Home";
 
 function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Navigate to="/login" replace />
+            element: <Home />
         },
         {
             path: "/login",
-            element: <Login/>
+            element: <Login />
         },
         {
             path: "/dashboard",
