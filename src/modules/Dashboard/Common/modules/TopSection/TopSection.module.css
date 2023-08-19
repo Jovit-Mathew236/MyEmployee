@@ -9,30 +9,46 @@
         background: #EBE4E4;
         min-width: 300px;
 
-        & i{
+        & i {
             margin: 10px;
         }
-        & input{
+
+        & input {
             border: none;
             background: none;
             outline: none;
         }
     }
 
-    .list_utils{
-        .sort{
+    .list_utils {
+        .sort {
             display: flex;
             font-weight: 700;
 
-            & p{
+            & p {
                 color: #848484;
             }
-            & select{
+
+            & select {
                 margin-left: 10px;
                 border: none;
                 background: none;
                 outline: none;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .top_section {
+        gap: 20px;
+
+        .search_input{
+            border-radius: 5px;
+        }
+        .list_utils {
+            flex-direction: column;
+            gap: 20px;
         }
     }
 }

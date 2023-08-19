@@ -8,6 +8,9 @@ import Layout from "./modules/Dashboard/Layouts/Layout";
 import ProjectManager from "./modules/Dashboard/modules/ProjectManager/ProjectManager";
 import CreateProject from "./modules/Dashboard/modules/CreateProject/CreateProject";
 import { Login } from "./modules/Dashboard/modules/Login";
+import Status from "./modules/Dashboard/modules/Status/Status";
+import Teams from "./modules/Dashboard/modules/Teams/Teams";
+
 
 function App() {
     const router = createBrowserRouter([
@@ -34,6 +37,14 @@ function App() {
                 {
                     path: "create-project",
                     element: <CreateProject />
+                },
+                {
+                    path: "project-status",
+                    element: <Status />
+                },
+                {
+                    path: "my-projects/team",
+                    element: <Teams />
                 }
             ]
         }
