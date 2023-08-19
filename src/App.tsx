@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Layout from "./modules/Dashboard/Layouts/Layout";
 import ProjectManager from "./modules/Dashboard/modules/ProjectManager/ProjectManager";
+import CreateProject from "./modules/Dashboard/modules/CreateProject/CreateProject";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
         {
           path: "my-projects",
           element: <ProjectManager />,
+        },
+        {
+          path: "create-project",
+          element: <CreateProject />,
         },
       ],
     },
