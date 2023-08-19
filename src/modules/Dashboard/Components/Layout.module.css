@@ -10,7 +10,7 @@
     transition: all 0.3s ease-in-out;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 130px 20px;
+    padding: 130px 0px;
     font-size: 30px;
     display: flex;
     flex-direction: column;
@@ -22,18 +22,32 @@
     position: fixed;
     font-weight: 700;
     top: 0;
-    left: 120px;
-    width: 100%;
+    left: 80px;
+    width: calc(100% - 80px);
     height: 80px;
     background: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    z-index: 1000;
+    z-index: 50;
 
-    .menu{
+    .menu {
         display: flex;
         gap: 20px;
+    }
+
+    .profile_details {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+
+        & div {
+            background: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
     }
 }

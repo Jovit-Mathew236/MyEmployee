@@ -10,7 +10,7 @@ const TopNav = () => {
         <p>Active</p>
         <p>Unassigned</p>
       </div>
-      <div>
+      <div className={styles.profile_details}>
         <i className="fi fi-sr-eclipse-alt"></i>
         <p>Arthur</p>
         <div>
