@@ -16,7 +16,7 @@ type Data = typeof data[0];
 
 const ProjectManager = () => {
   return (
-    <div className="grid justify-center grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
+    <div className="flex flex-row justify-start gap-5 flex-wrap">
       { data.map((d)=> <ProjectCard data={d} />)}
       <TackCard/>
     </div>
@@ -66,7 +66,7 @@ const TackCard = () => {
       </CardContent>
 
       <CardFooter className="mt-auto flex flex-col items-start gap-3">
-        <Progress value={33} className="h-2" />
+        <Progress value={33} />
         <span className="ps-3">33%</span>
         <div className="flex flex-row w-full items-center">
           <Button variant="secondary"> 2 days left </Button>
