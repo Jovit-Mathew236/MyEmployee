@@ -26,7 +26,7 @@ function App() {
           element: <div>Dashboard</div>,
         },
         {
-          path: "My-Projects",
+          path: "my-projects",
           element: <ProjectManager />,
         },
       ],
