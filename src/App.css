@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Space Grotesk', sans-serif;
-  overflow: hidden
+  overflow-x: hidden
 }
 
 @tailwind base;

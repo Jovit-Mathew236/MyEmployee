@@ -23,7 +23,7 @@ type Data = {
 export const TeamCard = ({ data }: { data: Data }) => {
     return (
         <Card
-            className={style.projectCard}
+            className={style.TeamCard}
             style={{
                 backgroundImage: "url('/src/assets/cardImage.png')"
             }}
