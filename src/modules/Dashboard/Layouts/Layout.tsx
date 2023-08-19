@@ -1,21 +1,23 @@
 // import React from 'react'
-
+import { Outlet } from "react-router-dom";
+import SideNav from "../Components/SideNav";
+import TopNav from "../Components/TopNav";
+import styles from "./Layout.module.css";
 
 const Layout = () => {
   return (
-    <div className={styles.full_page}>
-            {/* <SideNavBar sidebarButtons={buttons} /> */}
-            <div className={styles.right_side} id="right">
-                {/* <TopNavBar /> */}
-                <div className={styles.main_content}>
-                    {/* <Suspense fallback={<MuLoader />}> */}
+    <div>
+      <SideNav />
+      <div>
+        <TopNav />
+        <div className={styles.outlet}>
+          {/* <Suspense fallback={<MuLoader />}> */}
+          <Outlet />
+          {/* </Suspense> */}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-                        <Outlet />
-                    {/* </Suspense> */}
-                </div>
-            </div>
-        </div >
-  )
-}
-
-export default Layout
+export default Layout;

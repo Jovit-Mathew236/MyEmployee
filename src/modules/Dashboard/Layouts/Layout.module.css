@@ -1,0 +1,7 @@
+.outlet {
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    width: calc(100% - 80px);
+    padding: 0px 20px;
+}
