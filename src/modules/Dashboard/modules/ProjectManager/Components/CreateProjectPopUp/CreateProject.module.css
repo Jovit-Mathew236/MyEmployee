@@ -1,0 +1,16 @@
+.create_pop_up_container {
+    background: #fff;
+    min-width: 60%;
+    width: 6%;
+    min-height: 81%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 90px;
+    align-items: center;
+
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+}

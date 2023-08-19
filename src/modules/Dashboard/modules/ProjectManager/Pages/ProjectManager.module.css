@@ -1,0 +1,32 @@
+.create_pop_up {
+    position: fixed;
+    left: 20px;
+    top: 40px;
+    backdrop-filter: brightness(0.5);
+    -webkit-backdrop-filter: blur(9px);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create_btn {
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background: #000;
+    bottom: 40px;
+    right: 50px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+
+    & i {
+        display: flex;
+    }
+}

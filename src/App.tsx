@@ -5,8 +5,8 @@ import {
     Navigate
 } from "react-router-dom";
 import Layout from "./modules/Dashboard/Layouts/Layout";
-import ProjectManager from "./modules/Dashboard/modules/ProjectManager/ProjectManager";
-import CreateProject from "./modules/Dashboard/modules/CreateProject/CreateProject";
+import ProjectManager from "./modules/Dashboard/modules/ProjectManager/Pages/ProjectManager";
+import CreateProject from "./modules/Dashboard/modules/ProjectManager/Components/CreateProjectPopUp/CreateProject";
 import { Login } from "./modules/Dashboard/modules/Login";
 import Status from "./modules/Dashboard/modules/Status/Status";
 import Teams from "./modules/Dashboard/modules/Teams/Teams";
