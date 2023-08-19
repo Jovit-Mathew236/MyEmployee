@@ -2,9 +2,10 @@
 import styles from "./Layout.module.css";
 
 const TopNav = () => {
+  const title = window.location.pathname.split("/")[2] || "";
   return (
     <div className={styles.top_navbar}>
-      <div>Teams</div>
+      <div>{title}</div>
       <div className={styles.menu}>
         <p>All</p>
         <p>Active</p>

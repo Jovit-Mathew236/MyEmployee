@@ -1,0 +1,38 @@
+.top_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .search_input {
+        padding: 10px 5px;
+        background: #EBE4E4;
+        min-width: 300px;
+
+        & i{
+            margin: 10px;
+        }
+        & input{
+            border: none;
+            background: none;
+            outline: none;
+        }
+    }
+
+    .list_utils{
+        .sort{
+            display: flex;
+            font-weight: 700;
+
+            & p{
+                color: #848484;
+            }
+            & select{
+                margin-left: 10px;
+                border: none;
+                background: none;
+                outline: none;
+            }
+        }
+    }
+}
