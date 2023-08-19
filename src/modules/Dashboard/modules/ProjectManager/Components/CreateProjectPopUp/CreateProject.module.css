@@ -8,9 +8,17 @@
     flex-direction: column;
     padding: 40px 90px;
     align-items: center;
+    position: relative;
 
     & form {
         display: flex;
         flex-direction: column;
+    }
+    .close_btn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
     }
 }

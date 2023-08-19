@@ -1,10 +1,17 @@
 // import React from 'react'
 
 import styles from "./CreateProject.module.css";
-
-const CreateProject = () => {
+type Props ={
+  setCreatePopUp: React.Dispatch<React.SetStateAction<boolean>>
+}
+const CreateProject = (props:Props) => {
     return (
         <div className={styles.create_pop_up_container}>
+            <div className={styles.close_btn} onClick={()=>{
+              props.setCreatePopUp(false)
+            }}>
+                <i className="fi fi-sr-circle-xmark"></i>
+            </div>
             <h1>ADD NEW PROJECT</h1>
 
             <form action="">
