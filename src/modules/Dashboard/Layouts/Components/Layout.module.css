@@ -75,3 +75,33 @@
         }
     }
 }
+
+
+@media screen and (max-width: 800px) {
+    .sidebar{
+        display: none;
+    }
+    .top_navbar{
+        left: 0;
+        width: 100vw;
+    }
+    .top_navbar_mobile {
+        margin: auto;
+        margin-top: 90px;
+        display: flex;
+        width: 90vw;
+
+        .menu {
+            display: flex;
+            gap: 20px;
+
+            & p {
+                padding: 6px 10px;
+                background-color: #EBE4E4;
+                border-radius: 5px;
+                min-width: 100px;
+                text-align: center;
+            }
+        }
+    }
+}

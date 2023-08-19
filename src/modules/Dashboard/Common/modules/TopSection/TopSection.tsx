@@ -11,9 +11,17 @@ const TopSection = () => {
 
             <div className={styles.list_utils}>
                 <div className={styles.sort}>
-                    <p>Sort By</p>
+                    {window.innerWidth > 800 ? (
+                        <p>Sort By</p>
+                    ) : (
+                        <p>
+                            <i className="fi fi-br-bars-filter"></i>
+                        </p>
+                    )}
                     <select>
-                        <option value="name">No of members</option>
+                        {window.innerWidth > 800 && (
+                            <option value="members">No of members</option>
+                        )}
                         <option value="name">Name</option>
                         <option value="date">Date</option>
                     </select>

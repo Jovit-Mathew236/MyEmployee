@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import SideNav from "../Components/SideNav";
-import TopNav from "../Components/TopNav";
+import SideNav from "./Components/SideNav";
+import TopNav from "./Components/TopNav";
 import styles from "./Layout.module.css";
 import { BounceLoader } from "react-spinners";
 import TopSection from "../Common/modules/TopSection/TopSection";
