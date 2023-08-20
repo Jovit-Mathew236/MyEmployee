@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 const TopSection = () => {
     return (
         <div className={styles.top_section}>
-            <div className="flex bg-card-foreground text-card p-3">
+            <div className="flex bg-card-foreground text-card p-3 rounded-md">
                 <Search />
                 <Input type="text" placeholder="Search" className="bg-transparent !outline-none border-none" />
             </div>

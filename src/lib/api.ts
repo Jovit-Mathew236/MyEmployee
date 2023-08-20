@@ -5,9 +5,9 @@ export const api = {
         get: base + 'user/',
         create: base + 'user/create/',
     },
-    task: {
-        get: base +'task/',
-        create: base + 'task/create/',
+    team: {
+        get: base +'team/task/',
+        create: base + 'team/task/',
     },
     project: {
         get: base + 'project/',

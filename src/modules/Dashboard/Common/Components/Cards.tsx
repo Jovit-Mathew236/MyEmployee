@@ -6,30 +6,25 @@ import { getTime } from "@/lib/time";
 import { User } from "lucide-react";
 import style from "./Cards.module.css";
 
-type Data = {
-    title: string;
-    members: number;
-    task: number;
-    id: number;
-    img: string;
-};
+type Data = Task
 
 export const TeamCard = ({ data }: { data: Data }) => {
     return (
         <Card className={style.TeamCard + " group"} style={{ backgroundImage: "url('/src/assets/cardImage.png')" }} >
-            <div className="mb-auto mt-10 text-2xl text-white">
-                <h3>{data.title}</h3>
+            <div className="mb-auto mt-10 text-2xl text-white text-center">
+                <h3>{data.name}</h3>
+                <p>{data.description}</p>
             </div>
             <CardFooter className="w-full p-2 flex flex-col gap-2 bg-white group-hover:bg-card-foreground rounded-b-lg transition-all">
                 <div className="flex flex-row gap-2 justify-center text-sm">
                     <h3 className="flex items-center">
-                        <User size={"15px"} /> {data.members} Members
+                        <User size={"15px"} /> {data.members.length} Members
                     </h3>
-                    <h3 className="text-slate-500">{data.task} TASKS</h3>
+                    <h3>| Priority {data.priority}</h3>
                 </div>
                 <div className="flex gap-2 w-full">
-                    <Button className="w-full rounded-lg bg-white text-black" variant="ghost" > x </Button>
-                    <Button className="w-full rounded-lg" variant="destructive"> x </Button>
+                    <Button className="w-full rounded-lg bg-white text-black" variant="ghost" > {getTime(Date.now(),new Date(data.due_date).getTime())} </Button>
+                    <Button className="w-full rounded-lg text-white" variant="destructive"> {data.eta} </Button>
                 </div>
             </CardFooter>
         </Card>

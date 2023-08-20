@@ -1,6 +1,6 @@
 type Method = "POST" | "GET" | "PUT" | "DELETE" | "PATCH" | "OPTIONS" | "HEAD" | "CONNECT" | "TRACE"
 
-async function post(url:string, method:Method, data:object){
+async function post(url:string, method:Method, data?:object){
     
     const response = await fetch(url, {
         method: method,
@@ -8,7 +8,7 @@ async function post(url:string, method:Method, data:object){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data || {}),
     })
 
     if (!response.ok) {

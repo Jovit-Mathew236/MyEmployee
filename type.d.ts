@@ -27,3 +27,12 @@ type CreateProject = {
 }
 
 type Status = "INPROGRESS" | "COMPLETED" | "PENDING"
+type Priority = "LOW" | "MEDIUM" | "HIGH"
+type Task = {
+    "name": string,
+    "description": string,
+    priority: Priority,
+    due_date: string,
+    eta: string,
+    members: string[],
+}
