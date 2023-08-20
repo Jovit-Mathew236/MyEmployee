@@ -1,12 +1,14 @@
 // import React from "react";
+import { Search } from "lucide-react";
 import styles from "./TopSection.module.css";
+import { Input } from "@/components/ui/input";
 
 const TopSection = () => {
     return (
         <div className={styles.top_section}>
-            <div className={styles.search_input}>
-                <i className="fi fi-br-search"></i>
-                <input type="text" placeholder="Search" />
+            <div className="flex bg-card-foreground text-card p-3 rounded-md">
+                <Search />
+                <Input type="text" placeholder="Search" className="bg-transparent !outline-none border-none" />
             </div>
 
             <div className={styles.list_utils}>

@@ -11,6 +11,9 @@ import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover"
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast"
+import post from "@/lib/postman";
+import { api } from "@/lib/api";
+import { djangoTime } from "@/lib/time";
 
 const CreateProject = ({departmentId}:{departmentId:string}) => {
     const { toast } = useToast()
@@ -28,10 +31,25 @@ const CreateProject = ({departmentId}:{departmentId:string}) => {
         }
 
         const formData = new FormData(e.currentTarget)
-        const data = Object.fromEntries(formData.entries())
+        const data = Object.fromEntries(formData.entries()) 
+        data.deadline = djangoTime(data.deadline as string)
 
-        console.log(data)
-
+        post(api.project.create, "POST" ,data).then((res) => {
+            if (res.status === 200) {
+                toast({
+                    title: "Project Created",
+                    description: "Your project has been created",
+                    variant: "default"
+                  })
+            }
+        })
+        .catch((err) => {
+            toast({
+                title: "Project Creation Failed",
+                description: err.message,
+                variant: "destructive"
+              })
+        })
 
     }
     return (

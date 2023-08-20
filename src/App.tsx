@@ -38,7 +38,7 @@ function App() {
                     element: <Status />
                 },
                 {
-                    path: "my-projects/team",
+                    path: "teams",
                     element: <Teams />
                 }
             ]
