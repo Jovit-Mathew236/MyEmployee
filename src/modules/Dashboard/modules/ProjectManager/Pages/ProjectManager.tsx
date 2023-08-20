@@ -1,28 +1,18 @@
-import { useState } from "react";
-
 import { TaskCard } from "../../../Common/Components/Cards";
 import CreateProject from "../Components/CreateProjectPopUp/CreateProject";
 import styles from "./ProjectManager.module.css";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { PlusIcon } from "lucide-react";
 
 const ProjectManager = () => {
-    const [createPopUp, setCreatePopUp] = useState(false);
     return (
-        <>
-            <div
-                className={styles.create_pop_up}
-                style={{ display: createPopUp ? "flex" : "none" }}
-            >
-                {" "}
-                <CreateProject setCreatePopUp={setCreatePopUp}/>
-            </div>
-            <div
-                className={styles.create_btn}
-                onClick={() => {
-                    setCreatePopUp(!createPopUp);
-                }}
-            >
-                <i className="fi fi-br-plus"></i>
-            </div>
+        <>  
+        <div className={styles.create_btn}>
+                <Dialog>
+                    <DialogTrigger className="w-full h-full flex justify-center items-center"> <PlusIcon/></DialogTrigger>
+                    <CreateProject departmentId="1234567" />
+                </Dialog>
+        </div>
             <div className="flex justify-center md:justify-start gap-5 flex-wrap">
                 <TaskCard
                     onClick={() => {

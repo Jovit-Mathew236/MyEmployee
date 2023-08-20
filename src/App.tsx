@@ -1,13 +1,12 @@
-import "./App.css";
 import {
+    Navigate,
     RouterProvider,
-    createBrowserRouter,
-    Navigate
+    createBrowserRouter
 } from "react-router-dom";
+import "./App.css";
 import Layout from "./modules/Dashboard/Layouts/Layout";
+import Login from "./modules/Dashboard/modules/Login";
 import ProjectManager from "./modules/Dashboard/modules/ProjectManager/Pages/ProjectManager";
-import CreateProject from "./modules/Dashboard/modules/ProjectManager/Components/CreateProjectPopUp/CreateProject";
-import { Login } from "./modules/Dashboard/modules/Login";
 import Status from "./modules/Dashboard/modules/Status/Status";
 import Teams from "./modules/Dashboard/modules/Teams/Teams";
 import Home from "./modules/Home/pages/Home";
@@ -33,10 +32,6 @@ function App() {
                 {
                     path: "my-projects",
                     element: <ProjectManager />
-                },
-                {
-                    path: "create-project",
-                    element: <CreateProject />
                 },
                 {
                     path: "project-status",
