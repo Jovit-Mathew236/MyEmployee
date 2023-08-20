@@ -3,8 +3,56 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger, } from "@/components/ui/tabs"
+import { toast } from "@/components/ui/use-toast"
+import { api } from "@/lib/api"
+import post from "@/lib/postman"
 
 const Login = () => {
+
+    function handleLogin(e:React.FormEvent<HTMLFormElement>){
+        e.preventDefault()           
+
+        const formData = new FormData(e.currentTarget)
+        const data = Object.fromEntries(formData.entries())
+        post(api.user.get, "POST", data)
+        .then(()=>{
+            toast({
+                title: "Login Successful",
+                description: "You have been logged in",
+                variant: "default"
+            })
+        })
+        .catch((err)=>{
+            toast({
+                title: "Login Failed",
+                description: err.message,
+                variant: "destructive"
+            })
+        })
+    }
+
+    function handleCreate(e:React.FormEvent<HTMLFormElement>){
+        e.preventDefault()       
+
+        const formData = new FormData(e.currentTarget)
+        const data = Object.fromEntries(formData.entries())
+        post(api.user.create, "POST", data)
+        .then(()=>{
+            toast({
+                title: "Account Created Successful",
+                description: "You have been logged in",
+                variant: "default"    
+            })
+        })
+        .catch((err)=>{
+            toast({
+                title: "Login Failed",
+                description: err.message,
+                variant: "destructive"
+            })
+        })
+    }
+
   return (
     <div className="w-screen h-screen flex justify-center items-center" style={{
         backgroundImage: "url('/src/assets/loginBackground.png')"
@@ -23,7 +71,7 @@ const Login = () => {
                         Click sign-in to continue.
                     </CardDescription>
                 </CardHeader>
-                <form action="">
+                <form onSubmit={handleCreate}>
                 <CardContent>
                     <div className="space-y-1 flex-col-reverse flex gap-1">
                         <Input name="name" id="name" type="text" required disabled className="peer"/>
@@ -56,7 +104,7 @@ const Login = () => {
                         Click login to continue.
                     </CardDescription>
                 </CardHeader>
-                <form>
+                <form onSubmit={handleLogin}>
                 <CardContent className="space-y-2">
                     <div className="space-y-1">
                         <Label htmlFor="email">Email</Label>

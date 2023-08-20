@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
-import style from "./Cards.module.css";
-import { User } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { getTime } from "@/lib/time";
+import { User } from "lucide-react";
+import style from "./Cards.module.css";
 
 type Data = {
     title: string;
@@ -35,7 +36,7 @@ export const TeamCard = ({ data }: { data: Data }) => {
     );
 };
 
-export const TaskCard = ({ onClick }: { onClick: () => void }) => {
+export const TaskCard = ({data, onClick }: {data: Project,  onClick: () => void }) => {
     const SmallAvater = ({ className }: { className: string }) => {
         return (
             <Avatar className={className}>
@@ -51,24 +52,24 @@ export const TaskCard = ({ onClick }: { onClick: () => void }) => {
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <CardTitle>GTA CODESTORM</CardTitle>
+                <CardTitle>{data.name}</CardTitle>
             </CardHeader>
 
             <CardContent className="text-start">
-                <CardDescription className="text-xl">-Design</CardDescription>
+                <CardDescription className="text-xl">-{data.description}</CardDescription>
                 <CardDescription className="text-xl">
-                    -Development
+                    -{data.status}
                 </CardDescription>
             </CardContent>
 
             <CardFooter className="mt-auto flex flex-col items-start gap-3">
-                <Progress value={33} className="h-2" />
-                <span className="ps-3">33%</span>
+                <Progress value={data.progress} className="h-2" />
+                <span className="ps-2">{data.progress}%</span>
                 <div className="flex flex-row w-full items-center">
-                    <Button variant="secondary"> 2 days left </Button>
+                    <Button variant="secondary"> {getTime(Date.now(), new Date(data.deadline).getTime())}</Button>
                     <div className="relative ms-auto">
                         <SmallAvater className="" />
-                        <SmallAvater className="absolute bottom-0 -translate-x-5" />
+                        <SmallAvater className="absolute z-0 bottom-0 -translate-x-5" />
                     </div>
                 </div>
             </CardFooter>

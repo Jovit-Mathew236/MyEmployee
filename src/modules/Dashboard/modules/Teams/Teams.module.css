@@ -1,0 +1,14 @@
+.create_btn {
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    background: #000;
+    bottom: 40px;
+    right: 50px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}

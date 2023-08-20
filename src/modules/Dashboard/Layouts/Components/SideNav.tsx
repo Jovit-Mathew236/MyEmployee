@@ -36,7 +36,7 @@ const SideNav = () => {
             </p>
             <p
                 style={
-                    window.location.pathname === "/dashboard/my-teams"
+                    window.location.pathname === "/dashboard/teams"
                         ? {
                               backgroundColor: "#000",
                               color: "#fff"
@@ -44,7 +44,7 @@ const SideNav = () => {
                         : {}
                 }
                 onClick={() => {
-                    window.location.pathname = "/dashboard/my-teams";
+                    window.location.pathname = "/dashboard/teams";
                 }}
             >
                 <i className="fi fi-br-settings-sliders"></i>
