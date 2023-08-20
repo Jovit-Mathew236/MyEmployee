@@ -1,8 +1,8 @@
 .TeamCard {
-    @apply min-w-[300px] h-96 overflow-hidden border-0 text-white 
-    flex flex-col justify-end items-center bg-black shadow-md;
+    @apply min-w-[300px] h-96 border
+    flex flex-col justify-end items-center transition-all hover:scale-105 hover:bg-card-foreground hover:text-card;
 }
 
 .taskCard{
-    @apply min-w-[300px] bg-black border-0 text-white flex flex-col justify-center
+    @apply min-w-[300px] transition-all hover:scale-105 hover:bg-card-foreground hover:text-card flex flex-col justify-center
 }

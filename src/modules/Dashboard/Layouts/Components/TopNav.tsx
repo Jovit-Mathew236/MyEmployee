@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import styles from "./Layout.module.css";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const TopNav = () => {
     const title = window.location.pathname.split("/")[2] || "";
@@ -66,13 +67,10 @@ const TopNav = () => {
                         <p>Unassigned</p>
                     </div>
                 )}
-                <div className={styles.profile_details}>
-                    <i className="fi fi-sr-eclipse-alt"></i>
-                    <p>Arthur</p>
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
+                <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
             </div>
             {window.innerWidth < 800 && (
                 <div className={styles.top_navbar_mobile}>
