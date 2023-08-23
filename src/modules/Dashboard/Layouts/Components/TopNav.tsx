@@ -60,13 +60,6 @@ const TopNav = () => {
                     </div>
                 )}
                 <div>{title}</div>
-                {window.innerWidth > 800 && (
-                    <div className={styles.menu}>
-                        <p>All</p>
-                        <p>Active</p>
-                        <p>Unassigned</p>
-                    </div>
-                )}
                 <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
